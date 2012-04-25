@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 the original author or authors.
+ * Copyright 2010-2012 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -18,21 +18,52 @@
  * @author Andres Almiray
  */
 class LookandfeelOfficelnfsGriffonPlugin {
-    def version = 0.3
-    def griffonVersion = '0.9.3 > *'
-    def dependsOn = [lookandfeel: 0.5]
-    def toolkits = ['swing']
-    def platforms = ['windows', 'windows64']
-    def license = 'Apache Software License 2.0'
+    // the plugin version
+    String version = '0.4'
+    // the version or versions of Griffon the plugin is designed for
+    String griffonVersion = '0.9.5 > *'
+    // the other plugins this plugin depends on
+    Map dependsOn = [lookandfeel: '0.6']
+    // resources that are included in plugin packaging
+    List pluginIncludes = []
+    // the plugin license
+    String license = 'Apache Software License 2.0'
+    // Toolkit compatibility. No value means compatible with all
+    // Valid values are: swing, javafx, swt, pivot, gtk
+    List toolkits = ['swing']
+    // Platform compatibility. No value means compatible with all
+    // Valid values are:
+    // linux, linux64, windows, windows64, macosx, macosx64, solaris
+    List platforms = ['windows', 'windows64']
+    // URL where documentation can be found
+    String documentation = ''
+    // URL where source can be found
+    String source = 'https://github.com/griffon/griffon-lookandfeel-officelnfs-plugin'
 
-    def author = 'Andres Almiray'
-    def authorEmail = 'aalmiray@users.sourceforge.net'
-    def title = 'Officelnfs Swing Look & Feel'
-    def description = '''
-Officelnfs Swing Look & Feel.
-http://officelnfs.sourceforge.net/
+    List authors = [
+        [
+            name: 'Andres Almiray',
+            email: 'aalmiray@yahoo.com'
+        ]
+    ]
+    String title = 'Pluggable Look & Feel based on OfficeLnfs'
+    String description = '''
+Pluggable Look & Feel based on [OfficeLnfs][1].
+
+Usage
+-----
+
+Refer to the [lookandfeel][2] plugin to find out how setup `lookAndFeel` and `theme` properties in the configuration.
+
+LookAndFeel and Themes
+----------------------
+| *LookAndFeel* | *Theme*              |
+| ------------- | -------------------- |
+| Officelnfs    | Office 2003          |
+|               | Office XP            |
+|               | VisualStudio 2005    |
+
+[1]: http://officelnfs.sourceforge.net/
+[2]: /plugin/lookandfeel
 '''
-
-    // URL to the plugin's documentation
-    def documentation = 'http://griffon.codehaus.org/Lookandfeel+Officelnfs+Plugin'
 }
